@@ -1,6 +1,6 @@
-# Student Mark Management System
+# [Student Mark Management System](http://botinterpreters.pythonanywhere.com/)
 
-This is a web-based application built with Flask that allows students to create accounts, view their marks, and for administrators to insert, update, and delete marks in the database.
+This is a web-based application built with Flask that allows students to create accounts, view their marks, and for administrators to insert, update, and delete marks in the database. 
 
 ## Features
 
@@ -46,6 +46,7 @@ py main.py
 ```
 
 ## Usage
+![1](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/890e7d99-f547-41c2-87ef-3558c1131d26)
 
 ### As a student:
 
@@ -54,6 +55,7 @@ py main.py
 3. View your marks and visualize them on the graph.
 
 #### SCREENSHOT 1:
+![2](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/19ff73a8-6d03-4154-9c3c-81d1aab04771)
 
 ### As an admin:
 
@@ -61,4 +63,7 @@ py main.py
 2. Insert, update, or delete marks from the database.
 
 #### SCREENSHOT 1:
-#### SCREENSHOT 2:
+![3](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/c60d5c6d-30f9-41da-95ea-3d2a1fc1c043)
+
+#### SCREENSHOT 2
+![4](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/0efe240c-f354-4907-8967-214b282d3c49)
