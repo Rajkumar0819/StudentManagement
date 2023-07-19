@@ -1,4 +1,223 @@
 {% extends "base.html" %}
 
 {% block title %}Admin Page{%endblock%}
-{% block content %}Admin contetn pagesed {%endblock%}
+
+{% block content %}
+
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse1">Data Insertion Form</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <h3 align="center">Student Data Insertion Form</h3>
+                    <br />
+                    <div class="container">
+                        <table class="table table-bordered" style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <thead>
+                                <tr>
+                                    <th>Firstname</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in insert_table_data %}
+                                <tr>
+                                    <td>{{ row[0] }}</td>
+                                    <td>{{ row[1] }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <form method="POST" action="{{ url_for('views.insert_data') }}">
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" />
+                        </div>
+                        <br />
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" />
+                        </div>
+                        <br />
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="mark1">Mark 1</label>
+                            <input type="number" class="form-control" id="mark1" name="mark1" placeholder="Enter mark 1" />
+                        </div>
+                        <br />
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="mark2">Mark 2</label>
+                            <input type="number" class="form-control" id="mark2" name="mark2" placeholder="Enter mark 2" />
+                        </div>
+                        <br />
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="mark3">Mark 3</label>
+                            <input type="number" class="form-control" id="mark3" name="mark3" placeholder="Enter mark 3" />
+                        </div>
+                        <br />
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="mark4">Mark 4</label>
+                            <input type="number" class="form-control" id="mark4" name="mark4" placeholder="Enter mark 4" />
+                        </div>
+                        <br />
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="mark5">Mark 5</label>
+                            <input type="number" class="form-control" id="mark5" name="mark5" placeholder="Enter mark 5" />
+                        </div>
+                        <div class="text-center" style="padding-bottom: 15px;">
+                            <button type="submit" class="btn btn-primary"
+                                style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse2">Data Updation Form</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <h3 align="center">Student Data Updation Form</h3>
+                    <br />
+                    <div class="container">
+                    <table class="table table-bordered" style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Firstname</th>
+                                    <th>Mark 1</th>
+                                    <th>Mark 2</th>
+                                    <th>Mark 3</th>
+                                    <th>Mark 4</th>
+                                    <th>Mark 5</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in update_table_data %}
+                                <tr>
+                                    <td>{{ row[0] }}</td>
+                                    <td>{{ row[1] }}</td>
+                                    <td>{{ row[2] }}</td>
+                                    <td>{{ row[3] }}</td>
+                                    <td>{{ row[4] }}</td>
+                                    <td>{{ row[5] }}</td>
+                                    <td>{{ row[6] }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <form method="POST" action="{{ url_for('views.update_data') }}">
+                        <br />
+                        <h3 align="center">Student Data Updation Form</h3>
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" />
+                        </div>
+                        <br />
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" />
+                        </div>
+                        <br />
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="markSelect">Select Mark</label>
+                            <select class="form-control" id="markSelect" name="markSelect">
+                                <option value="mark1">Mark 1</option>
+                                <option value="mark2">Mark 2</option>
+                                <option value="mark3">Mark 3</option>
+                                <option value="mark4">Mark 4</option>
+                                <option value="mark5">Mark 5</option>
+                            </select>
+                        </div>
+                        <br />
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="markValue">Mark Value</label>
+                            <input type="number" class="form-control" id="markValue" name="markValue"
+                                placeholder="Enter mark value" />
+                        </div>
+                        <div class="text-center" style="padding-bottom: 15px;">
+                            <button type="submit" class="btn btn-primary"
+                                style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse3">Data Deletion Form</a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <h3 align="center">Student Deletion Form</h3>
+                    <br />
+                    <form method="POST" action="{{ url_for('views.delete_data') }}">
+                        <br />
+                        <h3 align="center">Student Data Deletion Form</h3>
+                        <div class="container">
+                            <table class="table table-bordered" style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <thead>
+                                <tr>
+                                    <th>Firstname</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in delete_table_data %}
+                                <tr>
+                                    <td>{{ row[0] }}</td>
+                                    <td>{{ row[1] }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            </table>
+                        </div> 
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" />
+                        </div>
+                        <br />
+                        <div class="form-group"
+                            style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" />
+                        </div>
+                        <div class="text-center" style="padding-bottom: 15px;">
+                            <input type="submit" class="btn btn-primary" value ="delete"
+                                style="width: 100%; max-width: 900px; margin-left: auto; margin-right: auto">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

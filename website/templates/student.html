@@ -3,6 +3,39 @@
 {% block title %}Student Page{%endblock%}
 
 {% block content %}
-<br>
-student content page
+<center>
+<canvas id="myChart" style="width:5%;max-width:1050px;"></canvas>
+    <script>
+      var xValues = ["Mark1", "Mark2", "Mark3", "Mark4", "Mark5"];
+      var yValues = {{mark_values}};
+      var barColors = ["red", "green", "blue", "orange", "brown"];
+
+      new Chart("myChart", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "World Wine Production 2018"
+          },
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                suggestedMin: 0,
+                suggestedMax: 100
+              }
+            }]
+          }
+        }
+      });
+    </script>
+</center>
 {%endblock%}

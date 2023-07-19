@@ -1,6 +1,6 @@
-from flask import Blueprint,render_template,request,flash,redirect,url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 from . import db
-from flask_login import LoginManager
+from flask_login import login_user, login_required, logout_user, current_user
 from .model import User
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -32,8 +32,9 @@ def signup():
             db.session.add(new_user)
             db.session.commit()
             flash("Account Created Successfully!!!", category="success")
+            login_user(new_user)
             return redirect(url_for('views.student'))
-    return render_template("signup.html")
+    return render_template("signup.html",user = current_user)
 
 
 @auth.route("/",methods=['GET','POST'])
@@ -41,21 +42,23 @@ def login():
     if request.method == "POST":
         email = request.form.get("email")
         password = request.form.get("password")
-        if email == "admin@gmail.com" and password == "admin123":
-            return redirect(url_for("views.admin"))
-        elif email != "admin@gmail.com" and password != "admin123":
-            user = User.query.filter_by(email=email).first()
-            if user:
-                if check_password_hash(user.password,password):
-                    flash("Logged in Successfully", category="success")
-                    return redirect(url_for("views.student"))
+        user = User.query.filter_by(email=email).first()
+        if user:
+            if user.email == "admin@gmail.com" and user.password =="admin123":
+                flash("Logged in Successfully as Admin", category="success")
+                login_user(user)
+                return redirect(url_for("views.admin"))
 
-
-        else:
-            return render_template("login.html")
-    return render_template("login.html")
+            elif check_password_hash(user.password,password):
+                flash("Logged in Successfully", category="success")
+                login_user(user)
+                return redirect(url_for("views.student"))     
+               
+    return render_template("login.html", user = current_user)
 
 
 @auth.route("/logout")
+@login_required
 def logout():
-    return "<h1> logout </h1>"
+    logout_user()
+    return redirect(url_for("auth.login"))
