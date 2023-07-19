@@ -46,7 +46,8 @@ py main.py
 ```
 
 ## Usage
-![1](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/890e7d99-f547-41c2-87ef-3558c1131d26)
+![1](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/c0acea47-9207-434a-b47b-200d67768248)
+
 
 ### As a student:
 
@@ -55,7 +56,8 @@ py main.py
 3. View your marks and visualize them on the graph.
 
 #### SCREENSHOT 1:
-![2](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/19ff73a8-6d03-4154-9c3c-81d1aab04771)
+![2](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/bebe249a-59cb-456b-8211-e5bd8cea00dc)
+
 
 ### As an admin:
 
@@ -63,7 +65,8 @@ py main.py
 2. Insert, update, or delete marks from the database.
 
 #### SCREENSHOT 1:
-![3](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/c60d5c6d-30f9-41da-95ea-3d2a1fc1c043)
+![3](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/d155e591-976b-4d0c-9a10-b177ae5570f2)
+
 
 #### SCREENSHOT 2
-![4](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/0efe240c-f354-4907-8967-214b282d3c49)
+![4](https://github.com/Rajkumar0819/StudentManagement/assets/113299030/5b79d8d8-d33b-49f2-89c0-9b73ee39e780)
